@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>openSUSE Presentation Template</title>
+    <title>hawk 2.0 and beyond - openSUSE conf, 2016</title>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/opensuse.css">
     <link rel="stylesheet" href="lib/css/github.css">
@@ -17,7 +17,6 @@
         color: #68cbc0;
         font-size: 66%;
       }
-        
     </style>
   </head>
   <body>
@@ -25,16 +24,21 @@
       <div class="slides">
         <section data-background="img/hexagons.png" data-background-size="100%"
                  data-background-position="50% 105%">
-          <h1><strong>rust</strong> and the OBS</h1>
-<img src="img/rust-error.png">
+          <h1><strong>Hawk 2.0</strong> and beyond</h1>
+<img src="img/hawk.png">
 
           <div class="title-name">Kristoffer Gr&ouml;nlund, SUSE</div>
           <div class="title-mail">github.com/krig</div>
            </section>
-        <!-- Slides are separated by newline + three dashes + newline, vertical slides identical but two dashes -->
+
+        <section>
+          <div id="qrcode"></div>
+          <div>
+            https://github.com/krig
+          </div>
+        </section>
         <section data-markdown="slides.md" data-separator="^\n---\n$" data-separator-vertical="^\n--\n$"></section>
         <section>
-          <h2>Please help us!</h2>
           <p><img src="img/chameleon.svg" style="max-height:300px;"></p>
           <div class="colophon">
             <h2>Questions?</h2>
@@ -51,16 +55,19 @@
           <div class="disclaimer">
             openSUSE branding colors and images from http://opensuse.github.io/branding-guidelines/.
                </div>
-          <p></p>
-          <div class="disclaimer">
-The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and distributed under the
-terms of the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY)</a>.
-          </div>
         </section>
       </div>
     </div>
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
+    <script src="js/qrcode.min.js"></script>
+    <script type="text/javascript">
+      new QRCode(document.getElementById("qrcode"), "https://github.com/krig");
+      var qrimage = document.querySelector("#qrcode img");
+      qrimage.style.marginLeft = "auto";
+      qrimage.style.marginRight = "auto";
+      qrimage.style.border = "32px solid white";
+    </script>          
     <script>
       Reveal.initialize({
         controls: true,
