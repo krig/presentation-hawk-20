@@ -1,13 +1,10 @@
-### Using High Availability is **easy** on openSUSE.
-
----
-
-#### **Hawk** is a web interface for High Availability clusters based on Pacemaker and corosync.
+# High Availability
 
 ---
 
 * LAMP Stack
 * Database
+* Mail Server
 * NFS Server
 * Virtual Machines
 * Containers
@@ -16,7 +13,16 @@
 
 ---
 
+### Using High Availability is **easy** on openSUSE.
+
+---
+
+#### **Hawk** is a web interface for High Availability clusters based on Pacemaker and corosync.
+
+---
+
 ## Installation
+##### Leap, Tumbleweed
 
 ```bash
 $ zypper install ha-cluster-bootstrap
@@ -47,15 +53,18 @@ $ docker pull krig/hawk
 
 ---
 
-* Ruby on Rails
-* Twitter Bootstrap
-* bootstrap-table
-* JsRender / JsViews
-* Various other gems (HAML, YAML, SCSS, ...)
+<img src="img/trainwreck2.jpg">
 
 ---
 
-<img src="img/trainwreck2.jpg">
+* Rails 4.2
+* Twitter Bootstrap 3
+* JsRender / JsViews
+* HAML, YAML, SCSS, ...
+
+---
+
+<img src="img/puma-logo-large.png" >
 
 ---
 
@@ -66,35 +75,29 @@ $ docker pull krig/hawk
 
 ---
 
-### Tumbleweed moves fast = App breaks often
+## Tumbleweed moves fast
 
-A lot of time spent managing `Gemfile`, re-packaging gems.
+1. `rubygem-arel` is updated from v. 6 to 7
+2. `rails` is now unresolvable (requires 6)
+3. `hawk` is now unresolvable...
 
 ---
 
-### Re-packaging gems
+### Re-packaging
 
 `rubygem-arel` to `rubygem-arel-6`
 
 ---
 
-Re-packaging is easy, but packages can take a long time to trickle into Tumbleweed.
-
----
-
-## gem hell
-
-* `rubygem-mini_portile` = `0.6.2`
-* `rubygem-mini_portile-2` = `2.1.0`
-* `rubygem-mini_portile-2.0` = `2.0.0`
-* `2.0.0.rc2` > `2.0.0` :(
+Changes can take a long time to trickle into Tumbleweed.
 
 ---
 
 ## OBS and Package Managers
 
 * Packaging language-specific packages as `rpm` is painful
-* Is there a better way?
+* gem-aware zypper + obs, generate needed rpms from gem + gem2rpm.yml
+  on install?
 
 ---
 
